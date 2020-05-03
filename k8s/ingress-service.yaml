@@ -13,4 +13,7 @@ spec:
 						backend:
 							serviceName: orc-cluster-ip-service
 							servicePort: 8080		
-					
+					- path: /
+						backend:
+							serviceName: orc-cluster-ip-service
+							servicePort: 8080

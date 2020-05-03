@@ -4,5 +4,5 @@ docker push slashy/orc-api:latest
 
 docker push slashy/orc-api:$SHA
 
-
+kubectl apply -f k8s
 kubectl set image deployments/orcapi-deployment server=slashy/orc-api:$SHA
