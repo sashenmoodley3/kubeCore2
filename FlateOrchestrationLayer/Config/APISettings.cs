@@ -10,6 +10,6 @@ namespace FlateOrchestrationLayer.Config
         public static string REDIS_HOST { get; set; }
         public static string REDIS_PORT { get; set; }
 
-        public static string REDIS_PORT { get; set; }
+        public static string Redishosttest { get; set; }
     }
 }
