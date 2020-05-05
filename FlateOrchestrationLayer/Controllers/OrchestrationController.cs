@@ -24,6 +24,8 @@ namespace FlateOrchestrationLayer.Controllers
                 IConnectionMultiplexer redis = ConnectionMultiplexer.Connect(configString);
                 //services.AddScoped(s => redis.GetDatabase());
 
+                
+
                 RedisOrchestration redisOrchestration = new RedisOrchestration(redis.GetDatabase());
 
                 redisOrchestration.SetRedisItem("Time", DateTime.Now.ToString());
@@ -36,6 +38,34 @@ namespace FlateOrchestrationLayer.Controllers
                 throw ex;
             }
             
+        }
+
+
+        [EnableCors("AllowAll")]
+        [HttpPost]
+        [Route("TestStatev2")]
+        public string TestStatev2()
+        {
+            try
+            {
+                var configString = $"{APISettings.Redishosttest}:{APISettings.REDIS_PORT},connectRetry=5";
+                IConnectionMultiplexer redis = ConnectionMultiplexer.Connect(configString);
+                //services.AddScoped(s => redis.GetDatabase());
+
+
+
+                RedisOrchestration redisOrchestration = new RedisOrchestration(redis.GetDatabase());
+
+                redisOrchestration.SetRedisItem("Time", DateTime.Now.ToString());
+
+                return redisOrchestration.GetRedisItem("Time");
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
         }
     }
 }
