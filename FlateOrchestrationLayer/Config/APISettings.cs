@@ -7,7 +7,7 @@ namespace FlateOrchestrationLayer.Config
 {
     public class APISettings
     {
-        public static string RedisHost { get; set; }
-        public static string RedisPort { get; set; }
+        public static string REDIS_HOST { get; set; }
+        public static string REDIS_PORT { get; set; }
     }
 }

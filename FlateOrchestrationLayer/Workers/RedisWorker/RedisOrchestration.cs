@@ -20,10 +20,10 @@ namespace FlateOrchestrationLayer.Workers.RedisWorker
         //{
         //    try
         //    {
-        //         var configString = $"{APISettings.RedisHost}:{APISettings.RedisPort},connectRetry=5";
-        //         _redis = ConnectionMultiplexer.Connect(configString);
+        //        var configString = $"{APISettings.RedisHost}:{APISettings.RedisPort},connectRetry=5";
+        //        _redis = ConnectionMultiplexer.Connect(configString);
 
-        //        IConnectionMultiplexer redis = ConnectionMultiplexer.Connect("localhost");
+        //        IConnectionMultiplexer redis = ConnectionMultiplexer.Connect("localhost",);
         //    }
         //    catch (RedisConnectionException err)
         //    {

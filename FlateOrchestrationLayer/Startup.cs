@@ -22,8 +22,8 @@ namespace FlateOrchestrationLayer
         {
             Configuration = configuration;
 
-            APISettings.RedisHost = Configuration["RedisHost"] ?? "";
-            APISettings.RedisPort = Configuration["RedisPort"] ?? "";
+            APISettings.REDIS_HOST = Configuration["REDIS_HOST"] ?? "";
+            APISettings.REDIS_PORT = Configuration["REDIS_PORT"] ?? "";
         }
 
         public IConfiguration Configuration { get; }
