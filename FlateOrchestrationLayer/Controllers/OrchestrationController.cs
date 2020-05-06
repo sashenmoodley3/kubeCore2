@@ -17,7 +17,7 @@ namespace FlateOrchestrationLayer.Controllers
         [EnableCors("AllowAll")]
         [HttpPost]
         [Route("TestState")]
-        public string TestState() {
+        public string TestState([FromBody]string data) {
             try
             {
                 var configString = $"{APISettings.REDIS_HOST}:{APISettings.REDIS_PORT},connectRetry=5";
@@ -28,7 +28,9 @@ namespace FlateOrchestrationLayer.Controllers
 
                 RedisOrchestration redisOrchestration = new RedisOrchestration(redis.GetDatabase());
 
-                redisOrchestration.SetRedisItem("Time", DateTime.Now.ToString());
+                var getValue = redisOrchestration.GetRedisItem("Time");
+
+                redisOrchestration.SetRedisItem("Time", getValue += data);
 
                 return redisOrchestration.GetRedisItem("Time");
             }
